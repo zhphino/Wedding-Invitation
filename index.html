@@ -19,10 +19,25 @@
             font-family: 'ZCOOL XiaoWei', serif;
         }
 
+        /* --- 仅针对新人名字字体的修改开始 --- */
+        .fangsong-font {
+            /* 适配华文细仿，若无则回退宋体 */
+            font-family: "STFangsong", "华文细仿", "STZhongsong", serif;
+            /* 限制大小，确保不超出屏幕：最小1.5rem，最大2.4rem */
+            font-size: clamp(1.5rem, 8.5vw, 2.4rem) !important; 
+            /* 增加大气间距 */
+            letter-spacing: 0.2em !important; 
+            margin-right: -0.2em; 
+            font-weight: 400;
+            white-space: nowrap;
+            max-width: 90vw;
+            overflow: hidden;
+        }
+        /* --- 仅针对新人名字字体的修改结束 --- */
+
         .video-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
         #bg-video { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 统一不换行且居中保护 */
         .no-wrap { 
             white-space: nowrap !important; 
             display: block;
@@ -50,20 +65,17 @@
         }
         .content.show { opacity: 1; transform: translateY(0); }
 
-        /* 统一字体大小 */
         .names-title { font-size: clamp(1.8rem, 11vw, 2.8rem); letter-spacing: 0.15em; margin: 0 0 10px 0; }
         .poem-text { font-size: clamp(1rem, 4.2vw, 1.5rem); line-height: 2.2; letter-spacing: 1px; margin-bottom: 15px; }
         .large-zh-text { font-size: clamp(1.2rem, 6.5vw, 2rem); line-height: 1.8; letter-spacing: 0.1em; margin: 5px 0; }
         .pinyin { font-size: 0.7rem; letter-spacing: 2px; opacity: 0.8; margin-bottom: 15px; font-family: sans-serif; }
         h2 { font-size: clamp(1.5rem, 7vw, 2rem); letter-spacing: 3px; margin: 0 0 10px 0; }
 
-        /* 统一图片样式 */
         .inline-img { display: block; margin: 15px auto 0; max-width: 100%; border-radius: 2px; object-fit: contain; }
         .page2-img { width: 55vw; height: auto; max-height: 35vh; }
         .page3-img { width: 75vw; height: auto; max-height: 30vh; }
         .page4-img { width: 55vw; height: 38vh; }
 
-        /* 页脚模块 */
         .footer-module { width: 100%; display: flex; flex-direction: column; align-items: center; }
         .footer-container { display: flex; align-items: center; justify-content: center; width: 100%; font-size: 0.95rem; font-weight: bold; letter-spacing: 3px; margin-bottom: 2px; }
         .footer-part { flex: 1; }
@@ -72,7 +84,6 @@
         .footer-amp { padding: 0 6px; opacity: 0.8; }
         .footer-img { width: 45vw; height: auto; display: block; }
 
-        /* 按钮组 */
         #start-gate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2000; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.96); transition: opacity 1s ease; }
         #start-btn { padding: 14px 40px; border: 1.2px solid var(--main-color); background: none; color: var(--main-color); font-size: 1.1rem; border-radius: 50px; letter-spacing: 4px; }
         .btn-group { margin-top: 15px; display: flex; flex-direction: column; gap: 8px; width: 85%; }
@@ -103,7 +114,7 @@
         <div class="section">
             <div class="page-header no-wrap">We are Getting Married</div>
             <div class="content">
-                <h1 class="names-title no-wrap">樊中榛 & 王丽楠</h1>
+                <h1 class="fangsong-font no-wrap">樊中榛 & 王丽楠</h1>
                 <p class="pinyin no-wrap">FAN ZHONG ZHEN & WANG LI NAN</p>
                 <p class="no-wrap">我们要结婚了</p>
             </div>
@@ -173,7 +184,7 @@
             <div class="content">
                 <h2 class="no-wrap">仪式时间</h2>
                 <p class="no-wrap" style="font-size: 1.5rem; font-weight: bold;">2026.04.25 | 17:28</p>
-                <p class="no-wrap">余姚阳明温泉山庄</p>
+                <p class="no-wrap">余姚阳明温泉山庄 | 阳明厅</p>
                 <p id="addr" style="font-size: 0.85rem; margin-top: 10px; width: 100%;">浙江省宁波市余姚市陆埠镇温泉路8号</p>
                 <div class="btn-group">
                     <div class="copy-btn" onclick="copyAddr()">一键复制详细地址</div>
