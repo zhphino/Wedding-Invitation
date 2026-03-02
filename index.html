@@ -19,23 +19,19 @@
             font-family: 'ZCOOL XiaoWei', serif;
         }
 
-        /* --- 修正版：确保 iPhone 呼起行楷 --- */
-        .names-special-font {
-            /* 精准匹配 iPhone 内置行楷 ID，并增加安卓通用楷体回退 */
-            font-family: "STXingkai-SC-Light", "STXingkai", "华文行楷", "STKaiti", "华文楷体", "KaiTi", "楷体", serif;
-            
-            /* 动态字号：确保在小屏 iPhone 上不溢出 */
-            font-size: clamp(1.6rem, 9.5vw, 2.4rem) !important; 
-            /* 行楷字体舒展，间距设为 0.15em 最为大气且稳妥 */
-            letter-spacing: 0.15em !important; 
-            margin-right: -0.15em; 
-            
-            font-weight: 400; /* 行楷自带风骨，无需加粗 */
-            white-space: nowrap;
-            max-width: 90vw;
-            overflow: hidden;
+        /* --- 修正：图片与拼音紧贴 --- */
+        .names-image-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 使用负边距向上拉近下方元素，可根据图片实际留白调整 -10px 到 -25px */
+            margin: 0 0 -15px 0; 
+        }
+        #names-img {
+            width: clamp(240px, 75vw, 420px); 
+            height: auto;
             display: block;
-            margin: 0 auto;
         }
         /* --- 修正结束 --- */
 
@@ -118,7 +114,9 @@
         <div class="section">
             <div class="page-header no-wrap">We are Getting Married</div>
             <div class="content">
-                <h1 class="names-special-font no-wrap">樊中榛 & 王丽楠</h1>
+                <div class="names-image-wrapper">
+                    <img src="names.png" id="names-img" alt="樊中榛 & 王丽楠">
+                </div>
                 <p class="pinyin no-wrap">FAN ZHONG ZHEN & WANG LI NAN</p>
                 <p class="no-wrap">我们要结婚了</p>
             </div>
@@ -188,7 +186,7 @@
             <div class="content">
                 <h2 class="no-wrap">仪式时间</h2>
                 <p class="no-wrap" style="font-size: 1.5rem; font-weight: bold;">2026.04.25 | 17:28</p>
-                <p class="no-wrap">余姚阳明温泉山庄 | 阳明厅</p>
+                <p class="no-wrap">余姚阳明温泉山庄</p>
                 <p id="addr" style="font-size: 0.85rem; margin-top: 10px; width: 100%;">浙江省宁波市余姚市陆埠镇温泉路8号</p>
                 <div class="btn-group">
                     <div class="copy-btn" onclick="copyAddr()">一键复制详细地址</div>
