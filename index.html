@@ -19,25 +19,28 @@
             font-family: 'ZCOOL XiaoWei', serif;
         }
 
-        /* --- 核心优化：调用手机通用楷体实现衬线效果 --- */
+        /* --- 核心优化：手机通用花体/书法感方案 --- */
         .names-special-font {
-            /* STKaiti: iOS 楷体, Kaiti: 通用楷体, 
-               FangSong: 仿宋(备选), 
-               'Noto Serif CJK SC': 部分安卓内置宋体
+            /* 1. STXingkai / STKaiti: iOS 内置行楷和楷体（极具花体感）
+               2. KaiTi / FangSong: 手机通用的传统书写体
+               3. cursive: 强制手机匹配系统内置的“手写/花体”字库
             */
-            font-family: "STKaiti", "华文楷体", "Kaiti", "楷体", "FangSong", "华文仿宋", "Noto Serif CJK SC", serif;
+            font-family: "STXingkai", "华文行楷", "STKaiti", "华文楷体", "KaiTi", "楷体", "FangSong", "仿宋", cursive;
             
-            /* 楷体结构较窄，字间距可以稍微再拉开一点以显大气 */
-            font-size: clamp(1.6rem, 9.5vw, 2.5rem) !important; 
-            letter-spacing: 0.22em !important; 
-            margin-right: -0.22em; 
+            /* 花体字形通常偏瘦长，适当增加缩放比例和间距 */
+            font-size: clamp(1.6rem, 9.8vw, 2.6rem) !important; 
+            letter-spacing: 0.18em !important; 
+            margin-right: -0.18em; 
             
-            font-weight: 600; /* 楷体加粗后更有厚重感 */
+            font-weight: 500; 
             white-space: nowrap;
             max-width: 92vw;
             overflow: hidden;
             display: block;
             margin: 0 auto;
+            
+            /* 稍微增加一点文字阴影，模拟书法墨迹的立体感 */
+            text-shadow: 0.5px 0.5px 1px rgba(111, 96, 86, 0.2);
         }
 
         .video-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
@@ -189,7 +192,7 @@
             <div class="content">
                 <h2 class="no-wrap">仪式时间</h2>
                 <p class="no-wrap" style="font-size: 1.5rem; font-weight: bold;">2026.04.25 | 17:28</p>
-                <p class="no-wrap">余姚阳明温泉山庄</p>
+                <p class="no-wrap">余姚阳明温泉山庄 | 阳明厅</p>
                 <p id="addr" style="font-size: 0.85rem; margin-top: 10px; width: 100%;">浙江省宁波市余姚市陆埠镇温泉路8号</p>
                 <div class="btn-group">
                     <div class="copy-btn" onclick="copyAddr()">一键复制详细地址</div>
