@@ -19,26 +19,26 @@
             font-family: 'ZCOOL XiaoWei', serif;
         }
 
-        /* --- 仅修改新人名字部分：使用手机通用大气字体 --- */
+        /* --- 核心优化：强制手机命中衬线字库 --- */
         .names-special-font {
-            /* 调用手机系统最常用的宋体/中宋系列，确保100%兼容且大气 */
-            font-family: "STZhongsong", "Apple LiSung", "Source Han Serif SC", "Source Han Serif CN", "SimSun", serif;
+            /* 1. STSong, STZhongsong 是 iOS (iPhone) 的内置衬线体
+               2. "Noto Serif CJK SC" 是部分高端安卓系统（如原声安卓/Pixel）的衬线名
+               3. serif 放在最后做保底
+            */
+            font-family: "STSong", "STZhongsong", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", serif;
             
-            /* 严格控制字号：在手机上既显眼又不超出屏幕 */
             font-size: clamp(1.6rem, 9vw, 2.5rem) !important; 
-            
-            /* 增加字间距：这是提升大气感的关键 */
             letter-spacing: 0.15em !important; 
-            margin-right: -0.15em; /* 居中补偿 */
+            margin-right: -0.15em; 
             
-            font-weight: 600; /* 略微加粗，模拟苍耳今楷的力度 */
+            /* 衬线体如果不显示，通常是因为字重(weight)设置问题，这里设为 700 增强冲击力 */
+            font-weight: 700; 
             white-space: nowrap;
-            max-width: 90vw;
+            max-width: 92vw;
             overflow: hidden;
             display: block;
             margin: 0 auto;
         }
-        /* --- 修改结束 --- */
 
         .video-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
         #bg-video { width: 100%; height: 100%; object-fit: cover; }
