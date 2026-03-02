@@ -19,21 +19,26 @@
             font-family: 'ZCOOL XiaoWei', serif;
         }
 
-        /* --- 仅针对新人名字字体的修改开始 --- */
-        .fangsong-font {
-            /* 适配华文细仿，若无则回退宋体 */
-            font-family: "STFangsong", "华文细仿", "STZhongsong", serif;
-            /* 限制大小，确保不超出屏幕：最小1.5rem，最大2.4rem */
-            font-size: clamp(1.5rem, 8.5vw, 2.4rem) !important; 
-            /* 增加大气间距 */
-            letter-spacing: 0.2em !important; 
-            margin-right: -0.2em; 
-            font-weight: 400;
+        /* --- 仅修改新人名字部分：使用手机通用大气字体 --- */
+        .names-special-font {
+            /* 调用手机系统最常用的宋体/中宋系列，确保100%兼容且大气 */
+            font-family: "STZhongsong", "Apple LiSung", "Source Han Serif SC", "Source Han Serif CN", "SimSun", serif;
+            
+            /* 严格控制字号：在手机上既显眼又不超出屏幕 */
+            font-size: clamp(1.6rem, 9vw, 2.5rem) !important; 
+            
+            /* 增加字间距：这是提升大气感的关键 */
+            letter-spacing: 0.15em !important; 
+            margin-right: -0.15em; /* 居中补偿 */
+            
+            font-weight: 600; /* 略微加粗，模拟苍耳今楷的力度 */
             white-space: nowrap;
             max-width: 90vw;
             overflow: hidden;
+            display: block;
+            margin: 0 auto;
         }
-        /* --- 仅针对新人名字字体的修改结束 --- */
+        /* --- 修改结束 --- */
 
         .video-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
         #bg-video { width: 100%; height: 100%; object-fit: cover; }
@@ -114,7 +119,7 @@
         <div class="section">
             <div class="page-header no-wrap">We are Getting Married</div>
             <div class="content">
-                <h1 class="fangsong-font no-wrap">樊中榛 & 王丽楠</h1>
+                <h1 class="names-special-font no-wrap">樊中榛 & 王丽楠</h1>
                 <p class="pinyin no-wrap">FAN ZHONG ZHEN & WANG LI NAN</p>
                 <p class="no-wrap">我们要结婚了</p>
             </div>
